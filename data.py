@@ -121,7 +121,7 @@ class DataApi:
                              DataApi.NAME_DEATHS: numberDeaths,
                              DataApi.NAME_DEATHS_SCALED: numberDeaths}
             dataFrame = dataFrame.append(dataFrame_row, ignore_index=True)
-        dataFrame[DataApi.NAME_DEATHS_SCALED] = dataFrame[DataApi.NAME_DEATHS_SCALED] / numberPopulation
+        dataFrame[DataApi.NAME_DEATHS_SCALED] = 1000000*dataFrame[DataApi.NAME_DEATHS_SCALED] / numberPopulation
         dataFrame = dataFrame.iloc[::-1]
         dataFrame = dataFrame.reset_index()
 
